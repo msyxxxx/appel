@@ -227,7 +227,7 @@ body {
         <div class="language-switch" onclick="toggleLanguage()">Changer la langue - تغيير اللغة</div>
     </div>
    <!-- المحتوى الخاص بالصفحة -->
-    <button class="music-button" onclick="toggleMusic()">🎵</button>
+    <button class="music-button" onclick="toggleMusic()">🎵.</button>
     <audio id="backgroundMusic" loop>
         <source src="music.mp3" type="audio/mpeg">
         المتصفح الخاص بك لا يدعم تشغيل الموسيقى.
@@ -315,7 +315,7 @@ body {
             `;
         }
 
-        function openSemester(specialty, level, semester) {
+  function openSemester(specialty, level, semester) {
     let link = '';
     // الروابط القديمة
     if (specialty === 'الاقتصاد والتسيير') {
@@ -341,14 +341,7 @@ body {
             link = (semester === 'S1') ? 'https://drive.google.com/drive/folders/10NJpI8V6F8bRA4CY99mOrfnt5SNor3BK' : link;
             link = (semester === 'S2') ? 'https://drive.google.com/drive/folders/10NwquRY-Akh9Iyss8W3ve1wHqL7CqJ0B' : link;
         }
-    document.body.innerHTML = `
-        <div class="header">
-            <button class="back-button button" onclick="openLevel('${specialty}', '${level}')">${isArabic ? "الرجوع" : "Retour"}</button>
-            <h2>${specialty} - ${level} - ${semester}</h2>
-        </div>
-        <a class="button" href="${link}" target="_blank">${isArabic ? "تحميل الكتب" : "Télécharger les livres"}</a>
-    `;
-}
+    }
             document.body.innerHTML = `
                 <div class="header">
                     <button class="back-button button" onclick="openLevel('${specialty}', '${level}')">${isArabic ? "الرجوع" : "Retour"}</button>
@@ -443,7 +436,5 @@ document.addEventListener("DOMContentLoaded", function() {
         textElement.offsetHeight; // إعادة تحميل العنصر
     };
 });
-window.addEventListener('beforeunload', function() { localStorage.setItem('musicPaused', document.getElementById("backgroundMusic").paused); });
-window.addEventListener('DOMContentLoaded', function() { if (localStorage.getItem('musicPaused') === 'false') document.getElementById("backgroundMusic").play(); });
     </script>
 </body>
