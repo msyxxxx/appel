@@ -1,21 +1,49 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>نظام اتصال مباشر</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Bluetooth Audio Connection</title>
 </head>
 <body>
-    <div class="container">
-        <h1>الاتصال الصوتي المباشر</h1>
-        <input type="text" id="roomIdInput" placeholder="أدخل الرقم التعريفي للغرفة">
-        <button id="createRoomBtn">إنشاء غرفة جديدة</button>
-        <button id="joinRoomBtn">الانضمام إلى غرفة</button>
-        <p id="status">غير متصل</p>
-        <audio id="audio" autoplay></audio>
-    </div>
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="script.js"></script>
+    <h1>Bluetooth Audio Connection</h1>
+    <button id="connectBtn">Connect to Bluetooth Device</button>
+    <button id="startCallBtn" disabled>Start Call</button>
+    <button id="endCallBtn" disabled>End Call</button>
+    
+    <script>
+        let bluetoothDevice;
+
+        // Event handler to connect to a Bluetooth device
+        document.getElementById('connectBtn').addEventListener('click', async () => {
+            try {
+                bluetoothDevice = await navigator.bluetooth.requestDevice({
+                    filters: [{ services: ['audio_sink'] }] // Bluetooth A2DP service for audio devices
+                });
+
+                console.log("Connected to: " + bluetoothDevice.name);
+                document.getElementById('startCallBtn').disabled = false;
+            } catch (error) {
+                console.error('Error connecting to device:', error);
+            }
+        });
+
+        // Start the call (this is where you would trigger the audio stream if possible)
+        document.getElementById('startCallBtn').addEventListener('click', () => {
+            if (bluetoothDevice) {
+                console.log('Starting call with device:', bluetoothDevice.name);
+                // Here, you would typically start the audio stream or interact with WebRTC for audio calls
+                // This is just a placeholder for the logic of starting an audio call
+            }
+        });
+
+        // End the call
+        document.getElementById('endCallBtn').addEventListener('click', () => {
+            if (bluetoothDevice) {
+                console.log('Ending call with device:', bluetoothDevice.name);
+                // Stop the audio stream or disconnect the Bluetooth device
+            }
+        });
+    </script>
 </body>
 </html>
