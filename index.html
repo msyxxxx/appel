@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>مكتبة كلية العلوم القانونية والاقتصادية</title>
- <button id="backButton" class="back-button" onclick="window.history.back()">الرجوع</button>
-    <style>
+ <style>
      /* إعدادات عامة للصفحة */
 body {
     margin: 0;
@@ -179,7 +178,7 @@ body {
               border-radius: 50%;
               box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
                   }
-‎/* تصميم زر الرجوع */
+/* تصميم زر الرجوع */
 .back-button {
     position: absolute; /* جعل الزر قابل للتحريك باستخدام الإحداثيات */
     top: 20px; /* تحديد المسافة من الأعلى (يمكن تغييره حسب الحاجة) */
@@ -196,13 +195,13 @@ body {
     z-index:500; /* التأكد من أن الزر يظهر فوق العناصر الأخرى */
 }
 
-‎/* تغيير اللون عند مرور المؤشر فوق الزر */
+/* تغيير اللون عند مرور المؤشر فوق الزر */
 .back-button:hover {
     background-color: #6A0DAD;; /* تغيير اللون إلى الأزرق الداكن عند مرور الماوس */
     transform: scale(1.05); /* تكبير الزر قليلاً عند مرور الماوس */
 }
 
-‎/* تأثير الضغط على الزر */
+/* تأثير الضغط على الزر */
 .back-button:active {
     transform: scale(0.98); /* تصغير الزر قليلاً عند الضغط عليه */
 }
@@ -446,39 +445,5 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 window.addEventListener('beforeunload', function() { localStorage.setItem('musicPaused', document.getElementById("backgroundMusic").paused); });
 window.addEventListener('DOMContentLoaded', function() { if (localStorage.getItem('musicPaused') === 'false') document.getElementById("backgroundMusic").play(); });
-// تعريف متغيرات الزر
-‏const button = document.getElementById('backButton');
-
-// متغيرات لتخزين مكان الزر عند بدء السحب
-‏let offsetX = 0, offsetY = 0, isDragging = false;
-
-// عند الضغط على الزر لبدء السحب
-‏button.addEventListener('mousedown', (e) => {
-‏    isDragging = true;
-‏    offsetX = e.clientX - button.getBoundingClientRect().left;
-‏    offsetY = e.clientY - button.getBoundingClientRect().top;
-‏    button.style.transition = 'none'; // إزالة التأثيرات أثناء السحب
-});
-
-// أثناء السحب
-‏document.addEventListener('mousemove', (e) => {
-‏    if (isDragging) {
-        // تحديث مكان الزر بناءً على موقع الماوس
-‏        button.style.left = (e.clientX - offsetX) + 'px';
-‏        button.style.top = (e.clientY - offsetY) + 'px';
-    }
-});
-
-// عند إفلات الزر
-‏document.addEventListener('mouseup', () => {
-‏    isDragging = false;
-‏    button.style.transition = 'all 0.3s'; // إعادة التأثيرات بعد السحب
-});
-
-// إضافة تأثير الظهور الافتراضي عند تحميل الصفحة
-‏window.addEventListener('load', () => {
-‏    button.style.opacity = '1'; // التأكد من أن الزر يظهر عند تحميل الصفحة
-‏    button.style.transition = 'opacity 0.5s'; // إضافة تأثير للظهور التدريجي
-});
     </script>
 </body>
