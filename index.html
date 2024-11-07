@@ -442,5 +442,8 @@ document.addEventListener("DOMContentLoaded", function() {
         textElement.style.animation = 'none'; // إيقاف التأثير قبل الخروج
         textElement.offsetHeight; // إعادة تحميل العنصر
     };
+});
+window.addEventListener('beforeunload', function() { localStorage.setItem('musicPaused', document.getElementById("backgroundMusic").paused); });
+window.addEventListener('DOMContentLoaded', function() { if (localStorage.getItem('musicPaused') === 'false') document.getElementById("backgroundMusic").play(); });
     </script>
 </body>
