@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>مكتبة كلية العلوم القانونية والاقتصادية</title>
  <style>
-     /* إعدادات عامة للصفحة */
+‎     /* إعدادات عامة للصفحة */
 body {
     margin: 0;
     display: flex;
@@ -17,7 +17,7 @@ body {
     background-color: #ffffff;
 }
 
-/* طبقة النقاط */
+‎/* طبقة النقاط */
 .dots-container {
     position: absolute;
     top: 0;
@@ -26,7 +26,7 @@ body {
     height: 100%;
     overflow: hidden;
     z-index: 0; 
-/* جعل النقاط في الخلف */
+‎/* جعل النقاط في الخلف */
 }
 
 .dot {
@@ -39,17 +39,17 @@ body {
     opacity: 0.5;
 }
 
-/* إعدادات حركة النقاط */
+‎/* إعدادات حركة النقاط */
 @keyframes move {
     0% { transform: translateY(0); }
     100% { transform: translateY(20px); }
 }
 
-/* طبقة الأزرار */
+‎/* طبقة الأزرار */
 .button-container {
     position: relative;
     z-index: 10; 
-/* جعل الأزرار في المقدمة */
+‎/* جعل الأزرار في المقدمة */
 }
 
 .button {
@@ -71,26 +71,26 @@ body {
     transform: translateY(-2px);
 }
 
-/* تصميم الشريط الجانبي */
+‎/* تصميم الشريط الجانبي */
 .sidebar {
     position: fixed;
-    top: 0;
+    top: 21px;
     right: -300px;
     width: 250px;
-    height: 100%;
+    height: 15%;
     background: rgba(0, 86, 179, 0.8);
     padding: 20px;
     transition: right 0.3s ease;
     z-index: 1000;
     box-shadow: -4px 0 10px rgba(0, 0, 0, 0.5);
-    border-radius: 0 10px 10px 0;
+    border-radius:25% 25%;
 }
 
 .sidebar.open {
     right: 0;
 }
 
-/* تصميم زر القائمة */
+‎/* تصميم زر القائمة */
 .menu-icon {
     position: absolute;
     top: 20px;
@@ -106,7 +106,7 @@ body {
     color: #0056b3;
 }
 
-/* إعدادات الأزرار */
+‎/* إعدادات الأزرار */
 .button {
     background-color: #000000;
     color: #fff;
@@ -127,7 +127,7 @@ body {
     transform: translateY(-2px);
 }
 
-/* تصميم العنوان */
+‎/* تصميم العنوان */
 .header h1 {
     font-size: 48px;
     color: #000;
@@ -135,7 +135,7 @@ body {
     margin-bottom: 20px;
 }
 
-/* تصميم معلومات المطور */
+‎/* تصميم معلومات المطور */
 .developer-info {
     position: fixed;
     bottom: 10px;
@@ -144,16 +144,10 @@ body {
     opacity: 0.8;
 }
 
-/* إعدادات اهتزاز النص */
-@keyframes shake {
-    0%, 100% { transform: translateX(0); }
-    25% { transform: translateX(-2px); }
-    75% { transform: translateX(2px); }
-}
-
+‎/* إعدادات اهتزاز النص */
 #typingEffect {
     display: inline-block;
-    font-size: 40px;
+    font-size: 25px;
     color: #000000;
     white-space: nowrap;
     overflow: hidden;
@@ -166,7 +160,7 @@ body {
     to { width: 100%; }
 }
 
-   /* موقع زر الموسيقى */ 
+‎   /* موقع زر الموسيقى */ 
 
           .music-button {
               position: fixed;
@@ -178,7 +172,7 @@ body {
               border-radius: 50%;
               box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
                   }
-/* تصميم زر الرجوع */
+‎/* تصميم زر الرجوع */
 .back-button {
     position: absolute; /* جعل الزر قابل للتحريك باستخدام الإحداثيات */
     top: 20px; /* تحديد المسافة من الأعلى (يمكن تغييره حسب الحاجة) */
@@ -195,13 +189,13 @@ body {
     z-index:500; /* التأكد من أن الزر يظهر فوق العناصر الأخرى */
 }
 
-/* تغيير اللون عند مرور المؤشر فوق الزر */
+‎/* تغيير اللون عند مرور المؤشر فوق الزر */
 .back-button:hover {
     background-color: #6A0DAD;; /* تغيير اللون إلى الأزرق الداكن عند مرور الماوس */
     transform: scale(1.05); /* تكبير الزر قليلاً عند مرور الماوس */
 }
 
-/* تأثير الضغط على الزر */
+‎/* تأثير الضغط على الزر */
 .back-button:active {
     transform: scale(0.98); /* تصغير الزر قليلاً عند الضغط عليه */
 }
@@ -209,32 +203,32 @@ body {
 </head>
 <body>
 </div>
-<!-- إضافة نقاط سوداء -->
-‏    <div class="dot" style="top: 20%; left: 10%; animation-delay: 0s;"></div>
-‏    <div class="dot" style="top: 25%; left: 30%; animation-delay: 0.2s;"></div>
-‏    <div class="dot" style="top: 30%; left: 50%; animation-delay: 0.4s;"></div>
-‏    <div class="dot" style="top: 35%; left: 70%; animation-delay: 0.6s;"></div>
-‏    <div class="dot" style="top: 40%; left: 90%; animation-delay: 0.8s;"></div>
-‏    <div class="dot" style="top: 45%; left: 20%; animation-delay: 1s;"></div>
-‏    <div class="dot" style="top: 50%; left: 40%; animation-delay: 1.2s;"></div>
-‏    <div class="dot" style="top: 55%; left: 60%; animation-delay: 1.4s;"></div>
-‏    <div class="dot" style="top: 60%; left: 80%; animation-delay: 1.6s;"></div>
-‏    <div class="dot" style="top: 65%; left: 90%; animation-delay: 1.8s;"></div>
+‎<!-- إضافة نقاط سوداء -->
+‎‏    <div class="dot" style="top: 20%; left: 10%; animation-delay: 0s;"></div>
+‎‏    <div class="dot" style="top: 25%; left: 30%; animation-delay: 0.2s;"></div>
+‎‏    <div class="dot" style="top: 30%; left: 50%; animation-delay: 0.4s;"></div>
+‎‏    <div class="dot" style="top: 35%; left: 70%; animation-delay: 0.6s;"></div>
+‎‏    <div class="dot" style="top: 40%; left: 90%; animation-delay: 0.8s;"></div>
+‎‏    <div class="dot" style="top: 45%; left: 20%; animation-delay: 1s;"></div>
+‎‏    <div class="dot" style="top: 50%; left: 40%; animation-delay: 1.2s;"></div>
+‎‏    <div class="dot" style="top: 55%; left: 60%; animation-delay: 1.4s;"></div>
+‎‏    <div class="dot" style="top: 60%; left: 80%; animation-delay: 1.6s;"></div>
+‎‏    <div class="dot" style="top: 65%; left: 90%; animation-delay: 1.8s;"></div>
 
     <div class="menu-icon" onclick="toggleSidebar()">☰</div>
     <div class="sidebar" id="sidebar">
         <h2>Réglages - الاعدادات ⚙️</h2>
         <div class="language-switch" onclick="toggleLanguage()">Changer la langue - تغيير اللغة</div>
     </div>
-   <!-- المحتوى الخاص بالصفحة -->
-    <button class="music-button" onclick="toggleMusic()">🎵.</button>
+‎   <!-- المحتوى الخاص بالصفحة -->
+    <button class="music-button" onclick="toggleMusic()">🎵</button>
     <audio id="backgroundMusic" loop>
         <source src="music.mp3" type="audio/mpeg">
-        المتصفح الخاص بك لا يدعم تشغيل الموسيقى.
+‎        المتصفح الخاص بك لا يدعم تشغيل الموسيقى.
 </audio>
 
     <div class="header">
-<h1 id="typingEffect">-  المكتبة الجامعية    - </h1>
+<h1 id="typingEffect">  الـــمـــكــتــبــة الـــجــامــعــيـــة    - </h1>
         <h2></h2>
         <h3></h3>
         <h4></h4>
@@ -243,10 +237,9 @@ body {
         <h7></h7>
     </div>
     <button class="button" onclick="openSection('main')">كتب كلية العلوم القانونية والاقتصادية</button>
-    <button class="button" onclick="openSection('!!!')">كتب المدرسة العليا لعلوم الصحة</button>
-    <div>نافذة قيد الانشاء...</div>
-
-    <div class="header">
+    <button class="button" onclick="openSection('!!!')">يتم اعداد هذا القسم...</button>‏
+   
+   <div class="header">
         <h8></h8>
     </div>
 
@@ -273,7 +266,7 @@ body {
             document.dir = isArabic ? "rtl" : "ltr";
             document.querySelector(".language-switch").textContent = isArabic ? "Changer la langue vers le français" : "تغيير اللغة للعربية";
             document.querySelector("h1").textContent = isArabic ? "المكتبة الجامعية" : "Bibliothèque Universitaire";
-            document.querySelector(".button").textContent = isArabic ? "كلية العلوم القانونية والاقتصادية" : "Faculté de Droit et d'Économie";
+       document.querySelector(".button").textContent = isArabic ? "كلية العلوم القانونية والاقتصادية" : "Faculté de Droit et d'Économie";
         }
 
         function openSection(section) {
@@ -317,7 +310,7 @@ body {
 
   function openSemester(specialty, level, semester) {
     let link = '';
-    // الروابط القديمة
+‎    // الروابط القديمة
     if (specialty === 'الاقتصاد والتسيير') {
         link = (level === 'L1' && semester === 'S1') ? 'https://drive.google.com/drive/folders/152wHcD4O5bJd1aDmtD0u6HKLzKK1YxPV' : '';
         link = (level === 'L1' && semester === 'S2') ? 'https://drive.google.com/drive/folders/1-ffPR2kL9fEBsC_C184t3lWRRS8sPenf' : link;
@@ -325,7 +318,7 @@ body {
         link = (level === 'L1' && semester === 'S1') ? 'https://drive.google.com/drive/folders/10uXNSqA0jH3QrXAtlxMq-vuMmwrSZEg0' : '';
         link = (level === 'L1' && semester === 'S2') ? 'https://drive.google.com/drive/folders/10uz7mFXte1orakUTov6aWI1zWpo0ltGd' : link;
     }
-    // الروابط الجديدة
+‎    // الروابط الجديدة
     else if (specialty === 'القانون') {
         if (level === 'L1') {
             link = (semester === 'S1') ? 'https://drive.google.com/file/d/120zSK4tz_sZvWSpwnz9g8IcAlY4_Q6zq' : link;
@@ -395,7 +388,7 @@ function displayEquations() {
 
 displayEquations();
 
-// دالة تشغيل/إيقاف الموسيقى
+‎// دالة تشغيل/إيقاف الموسيقى
 function toggleMusic() {
     const music = document.getElementById("backgroundMusic");
     const musicButton = document.querySelector(".music-button");
@@ -408,29 +401,29 @@ function toggleMusic() {
         musicButton.textContent = "🔇"; // إعادة الأيقونة إلى مكبر صوت مفتوح
     }
 }
-// تكرار التأثير عند تحميل الصفحة والعودة لها
+‎// تكرار التأثير عند تحميل الصفحة والعودة لها
 document.addEventListener("DOMContentLoaded", function() {
     const textElement = document.getElementById('typingEffect');
     
-    // التأثير الحركي للكتابة حرفًا بحرف
+‎    // التأثير الحركي للكتابة حرفًا بحرف
     textElement.style.animation = 'none'; // إيقاف التأثير أولاً
     textElement.offsetHeight; // إعادة تحميل العنصر
     textElement.style.animation = ''; // بدء التأثير
     
-    // بدء الاهتزاز الفعلي للهاتف عند الكتابة
+‎    // بدء الاهتزاز الفعلي للهاتف عند الكتابة
     let vibrationInterval = setInterval(() => {
         if (navigator.vibrate) {
-            // اهتزاز الهاتف لمدة 100 مللي ثانية (يمكنك تعديل المدة)
+‎            // اهتزاز الهاتف لمدة 100 مللي ثانية (يمكنك تعديل المدة)
             navigator.vibrate(100); 
         }
-    }, 200); // يكرر الاهتزاز كل 200 مللي ثانية
+‎    }, 200); // يكرر الاهتزاز كل 200 مللي ثانية
 
-    // عند الانتهاء من الكتابة، إيقاف الاهتزاز
+‎    // عند الانتهاء من الكتابة، إيقاف الاهتزاز
     setTimeout(() => {
         clearInterval(vibrationInterval);
-    }, 4000); // بعد 4 ثوانٍ، يتوقف الاهتزاز (يمكنك تعديل المدة حسب رغبتك)
+‎    }, 4000); // بعد 4 ثوانٍ، يتوقف الاهتزاز (يمكنك تعديل المدة حسب رغبتك)
     
-    // التأكد من أن التأثير يعمل مرة أخرى عند العودة للصفحة الرئيسية
+‎    // التأكد من أن التأثير يعمل مرة أخرى عند العودة للصفحة الرئيسية
     window.onbeforeunload = () => {
         textElement.style.animation = 'none'; // إيقاف التأثير قبل الخروج
         textElement.offsetHeight; // إعادة تحميل العنصر
