@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>مكتبة كلية العلوم القانونية والاقتصادية</title>
  <style>
-‎     /* إعدادات عامة للصفحة */
+‎/* إعدادات عامة للصفحة */
 body {
     margin: 0;
     display: flex;
@@ -74,7 +74,7 @@ body {
 ‎/* تصميم الشريط الجانبي */
 .sidebar {
     position: fixed;
-    top: 21px;
+    top:20px;
     right: -300px;
     width: 250px;
     height: 15%;
@@ -133,6 +133,7 @@ body {
     color: #000;
     text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
     margin-bottom: 20px;
+    margin-top:9px;
 }
 
 ‎/* تصميم معلومات المطور */
@@ -152,7 +153,7 @@ body {
     white-space: nowrap;
     overflow: hidden;
     width: 0;
-    animation: typing 4s steps(20) infinite, shake 0.5s ease-in-out infinite;
+    animation: typing 6s steps(20) infinite, shake 0.5s ease-in-out infinite;
 }
 
 @keyframes typing {
@@ -228,7 +229,7 @@ body {
 </audio>
 
     <div class="header">
-<h1 id="typingEffect">  الـــمـــكــتــبــة الـــجــامــعــيـــة    - </h1>
+<h1 id="typingEffect">  الــمــــــكـــتــبــة الـــجـــامـــعــيــة    - </h1>
         <h2></h2>
         <h3></h3>
         <h4></h4>
@@ -236,13 +237,16 @@ body {
         <h6></h6>
         <h7></h7>
     </div>
-    <button class="button" onclick="openSection('main')">كتب كلية العلوم القانونية والاقتصادية</button>
-    <button class="button" onclick="openSection('!!!')">يتم اعداد هذا القسم...</button>‏
-   
-   <div class="header">
+    <button class="button" onclick="openSection('main')">كـتـب كـلـيـة الـعـلـوم الـقـانـونـيـة والاقـتـصـاديـة</button>
+    <button class="button" onclick="openSection('!!!')">⏳</button>
+     <button class="button" onclick="openSection('!!!')">⏳</button>
+   <button class="button" onclick="openSection('!!!')">⏳</button>
+
+
+    <div class="header">
         <h8></h8>
     </div>
-
+ 
     <div class="developer-info">
         ® dev: Mohamed Salem/Yacoub 
     </div>
@@ -265,8 +269,8 @@ body {
             document.documentElement.lang = isArabic ? "ar" : "fr";
             document.dir = isArabic ? "rtl" : "ltr";
             document.querySelector(".language-switch").textContent = isArabic ? "Changer la langue vers le français" : "تغيير اللغة للعربية";
-            document.querySelector("h1").textContent = isArabic ? "المكتبة الجامعية" : "Bibliothèque Universitaire";
-       document.querySelector(".button").textContent = isArabic ? "كلية العلوم القانونية والاقتصادية" : "Faculté de Droit et d'Économie";
+            document.querySelector("h1").textContent = isArabic ?  " الـــمـــكــتــبــة الــجــامــعــيــة  " : "  Bibliothèque Universitaire  ";
+            document.querySelector(".button").textContent = isArabic ? "كــلـيـة الــعـلـوم الــقـانـونـيـة والاقـتـصـاديـة" : "Faculté de Droit et d'Économie";
         }
 
         function openSection(section) {
