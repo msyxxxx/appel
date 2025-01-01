@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UGEM Membership Admin</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        header {
+            background-color: #ffdd00;
+            color: #000;
+            text-align: center;
+            padding: 20px;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        main {
+            padding: 10px;
+        }
+
+        section {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 6px;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+
+        th {
+            background-color: #ffdd00;
+        }
+
+        button {
+            padding: 10px 10px;
+            background-color: #ffdd00;
+            color: #000;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            border-radius: 30px;
+        }
+
+        button:hover {
+            background-color: #e6c300;
+        }
+
+        img {
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+        }
+
+        #downloadBtn {
+            margin-top: 20px;
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>إدارة الانتساب - </h1>
+    </header>
+    <main>
+        <section id="members-list">
+            <h2>قائمة الأعضاء</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>الاسم</th>
+                        <th>الهاتف</th>
+                        <th>الرقم التعريفي</th>
+                        <th>المستوى</th>
+                        <th>التخصص</th>
+                        <th>الكلية</th>
+                        <th>الصورة</th>
+                        <th>الإجراءات</th>
+                    </tr>
+                </thead>
+                <tbody id="membersTableBody"></tbody>
+            </table>
+            <button id="deleteAllBtn">حذف جميع البيانات</button>
+            <button id="downloadBtn">تنزيل البيانات</button>
+        </section>
+    </main>
+
+    <script>
+        const storeMembers = (members) => localStorage.setItem('members', JSON.stringify(members));
+        const getMembers = () => JSON.parse(localStorage.getItem('members')) || [];
+        const membersTableBody = document.getElementById("membersTableBody");
+
+        const loadMembers = () => {
+            const members = getMembers();
+            membersTableBody.innerHTML = "";
+            members.forEach((member, index) => {
+                const row = document.createElement("tr");
+                row.innerHTML = `
+                    <td>${member.name}</td>
+                    <td>${member.phone}</td>
+                    <td>${member.id}</td>
+                    <td>${member.level}</td>
+                    <td>${member.major}</td>
+                    <td>${member.college}</td>
+                    <td>
+                        ${member.image ? `<img src="${member.image}" alt="Photo">` : "لا توجد صورة"}
+                    </td>
+                    <td>
+                        <button onclick="editMember(${index})">تعديل</button>
+                        <button onclick="deleteMember(${index})">حذف</button>
+                    </td>
+                `;
+                membersTableBody.appendChild(row);
+            });
+        };
+
+        const editMember = (index) => {
+            const members = getMembers();
+            const member = members[index];
+            const newName = prompt("أدخل الاسم الجديد:", member.name);
+            const newPhone = prompt("أدخل الهاتف الجديد:", member.phone);
+            const newLevel = prompt("أدخل المستوى الجديد:", member.level);
+            const newMajor = prompt("أدخل التخصص الجديد:", member.major);
+            const newCollege = prompt("أدخل الكلية الجديدة:", member.college);
+
+            if (newName && newPhone && newLevel && newMajor && newCollege) {
+                members[index] = { ...member, name: newName, phone: newPhone, level: newLevel, major: newMajor, college: newCollege };
+                storeMembers(members);
+                loadMembers();
+            }
+        };
+
+        const deleteMember = (index) => {
+            const members = getMembers();
+            if (confirm("هل تريد حذف هذا العضو؟")) {
+                members.splice(index, 1);
+                storeMembers(members);
+                loadMembers();
+            }
+        };
+
+        document.getElementById("deleteAllBtn").addEventListener("click", () => {
+            if (confirm("هل أنت متأكد من حذف جميع البيانات؟")) {
+                localStorage.removeItem('members');
+                loadMembers();
+                alert("تم حذف جميع البيانات!");
+            }
+        });
+
+        document.getElementById("downloadBtn").addEventListener("click", () => {
+            const members = getMembers();
+            const blob = new Blob([JSON.stringify(members, null, 2)], { type: "application/json" });
+            const link = document.createElement("a");
+            link.href = URL.createObjectURL(blob);
+            link.download = "members.json";
+            link.click();
+        });
+
+        document.addEventListener("DOMContentLoaded", loadMembers);
+    </script>
+</body>
+</html>
